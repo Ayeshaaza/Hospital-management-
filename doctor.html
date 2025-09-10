@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctors - LifeLine Hospital</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body{background:linear-gradient(120deg,#6a11cb,#11998e);min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:40px 20px;color:#333;}
+.container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;width:100%;max-width:1200px;}
+.doctor-card{background:#fff;border-radius:20px;box-shadow:0 6px 15px rgba(0,0,0,0.2);padding:25px;text-align:center;animation:fadeIn 1s ease-in;}
+.doctor-card h2{color:#6a11cb;margin-bottom:5px;}
+.doctor-card h4{color:#11998e;margin-bottom:15px;}
+.tabs{display:flex;justify-content:space-around;margin:15px 0;}
+.tab-btn{border:none;background:#6a11cb;color:white;padding:6px 12px;border-radius:15px;cursor:pointer;font-size:13px;transition:0.3s;}
+.tab-btn:hover{background:#11998e;}
+.tab-content{display:none;text-align:left;margin-top:10px;font-size:14px;}
+.tab-content.active{display:block;}
+.btn-appointment{margin-top:15px;background:#11998e;color:white;padding:10px 18px;border:none;border-radius:20px;font-size:15px;cursor:pointer;transition:0.3s;}
+.btn-appointment:hover{background:#6a11cb;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <header style="background:rgba(0,0,0,0.7);color:white;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;width:100%;">
+    <h1>🏥 LifeLine Hospital</h1>
+    <nav>
+      <a href="index.html" style="color:white;margin-left:20px;text-decoration:none;">Home</a>
+      <a href="doctors.html" style="color:white;margin-left:20px;text-decoration:none;">Doctors</a>
+      <a href="patients.html" style="color:white;margin-left:20px;text-decoration:none;">Patients</a>
+      <a href="booking.html" style="color:white;margin-left:20px;text-decoration:none;">Booking</a>
+      <a href="contact.html" style="color:white;margin-left:20px;text-decoration:none;">Contact</a>
+      <a href="healthtips.html" style="color:white;margin-left:20px;text-decoration:none;">Health Tips</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- Doctor 1 -->
+    <div class="doctor-card">
+      <h2>Dr. Priya Sharma</h2>
+      <h4>Cardiologist</h4>
+      <div class="tabs">
+        <button class="tab-btn" onclick="openTab(this,'about1')">About</button>
+        <button class="tab-btn" onclick="openTab(this,'schedule1')">Schedule</button>
+        <button class="tab-btn" onclick="openTab(this,'contact1')">Contact</button>
+      </div>
+      <div id="about1" class="tab-content active">
+        <p>12+ years of experience in cardiology. Specializes in heart-related diseases and preventive healthcare.</p>
+      </div>
+      <div id="schedule1" class="tab-content">
+        <p><b>Mon-Fri:</b> 10 AM - 2 PM<br><b>Sat:</b> 11 AM - 1 PM</p>
+      </div>
+      <div id="contact1" class="tab-content">
+        <p>Email: priya.sharma@lifeline.com<br>Phone: +91 98765 43210</p>
+      </div>
+      <button class="btn-appointment" onclick="bookAppointment('Dr. Priya Sharma')">Book Appointment</button>
+    </div>
+
+    <!-- Add remaining doctors (Dr. Arjun Verma, Dr. Neha Kapoor, etc.) same as your previous code -->
+
+  </div>
+
+<script>
+function openTab(button,tabId){
+  let card=button.closest('.doctor-card');
+  let contents=card.querySelectorAll('.tab-content');
+  contents.forEach(content=>content.classList.remove('active'));
+  card.querySelector('#'+tabId).classList.add('active');
+}
+function bookAppointment(doctorName){
+  alert("Your appointment request has been sent to "+doctorName+"!");
+}
+</script>
+
+</body>
+</html>
