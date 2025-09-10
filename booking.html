@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmation - LifeLine Hospital</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body{background:linear-gradient(135deg,#B0E0E6,#E0FFFF);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:40px 20px;color:#333;}
+.confirmation-card{background:#fff;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,0.2);width:400px;padding:30px;text-align:center;animation:fadeIn 1s ease-in;}
+.confirmation-card h2{color:#1E90FF;margin-bottom:10px;}
+.confirmation-card h4{color:#20B2AA;margin-bottom:25px;}
+.details p{font-size:16px;margin-bottom:12px;line-height:1.5;}
+.btn{margin-top:20px;background:#20B2AA;color:#fff;padding:12px 20px;border:none;border-radius:25px;font-size:15px;cursor:pointer;transition:0.3s;margin-right:10px;}
+.btn:hover{background:#1E90FF;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <header style="background:rgba(0,0,0,0.7);color:white;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;width:100%;position:absolute;top:0;">
+    <h1>🏥 LifeLine Hospital</h1>
+    <nav>
+      <a href="index.html" style="color:white;margin-left:20px;text-decoration:none;">Home</a>
+      <a href="doctors.html" style="color:white;margin-left:20px;text-decoration:none;">Doctors</a>
+      <a href="patients.html" style="color:white;margin-left:20px;text-decoration:none;">Patients</a>
+      <a href="booking.html" style="color:white;margin-left:20px;text-decoration:none;">Booking</a>
+      <a href="contact.html" style="color:white;margin-left:20px;text-decoration:none;">Contact</a>
+      <a href="healthtips.html" style="color:white;margin-left:20px;text-decoration:none;">Health Tips</a>
+    </nav>
+  </header>
+
+  <div class="confirmation-card" style="margin-top:60px;">
+    <h2>Booking Confirmed!</h2>
+    <h4>LifeLine Hospital</h4>
+    <div class="details">
+      <p><b>Patient Name:</b> Murari</p>
+      <p><b>Email:</b> murari08@example.com</p>
+      <p><b>Doctor:</b> Dr. Priya Sharma</p>
+      <p><b>Date:</b> 15-Sep-2025</p>
+      <p><b>Time:</b> 10:30 AM</p>
+      <p><b>Status:</b> Confirmed ✅</p>
+    </div>
+    <button class="btn" onclick="alert('Printing receipt... 🖨️')">Print Receipt</button>
+    <button class="btn" onclick="window.location.href='index.html'">Back to Home</button>
+  </div>
+
+</body>
+</html>
