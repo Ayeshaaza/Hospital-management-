@@ -239,7 +239,7 @@
       const lastAppointment = appointments[appointments.length - 1];
       if (lastAppointment) {
         lastAppointment.paymentMode = mode;
-        alert(Payment of ₹${lastAppointment.bill} successful via ${mode});
+        alert(`Payment of ₹${lastAppointment.bill} successful via ${mode}`);
         updateAppointmentTable();
         showSection('appointments');
       }
