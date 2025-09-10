@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Profile - LifeLine Hospital</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body{background:linear-gradient(120deg,#FFDAB9,#98FB98);min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:40px 20px;color:#333;}
+.profile-card{background:#fff;border-radius:20px;box-shadow:0 6px 15px rgba(0,0,0,0.2);width:400px;padding:25px;text-align:center;animation:fadeIn 1s ease-in;}
+.profile-card h2{color:#FF7F50;margin-bottom:10px;}
+.profile-card h4{color:#3CB371;margin-bottom:15px;}
+.info p{font-size:14px;margin-bottom:8px;}
+.tabs{display:flex;justify-content:space-around;margin:20px 0;}
+.tab-btn{border:none;background:#FF7F50;color:white;padding:8px 15px;border-radius:15px;cursor:pointer;font-size:14px;transition:0.3s;}
+.tab-btn:hover{background:#3CB371;}
+.tab-content{display:none;text-align:left;margin-top:10px;font-size:14px;}
+.tab-content.active{display:block;}
+.btn{margin-top:15px;background:#3CB371;color:white;padding:10px 18px;border:none;border-radius:20px;font-size:15px;cursor:pointer;transition:0.3s;margin-right:10px;}
+.btn:hover{background:#FF7F50;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+  <!-- ✅ Navigation Bar -->
+  <header style="background:rgba(0,0,0,0.7);color:white;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;width:100%;">
+    <h1>🏥 LifeLine Hospital</h1>
+    <nav>
+      <a href="index.html" style="color:white;margin-left:20px;text-decoration:none;">Home</a>
+      <a href="doctors.html" style="color:white;margin-left:20px;text-decoration:none;">Doctors</a>
+      <a href="patients.html" style="color:white;margin-left:20px;text-decoration:none;">Patients</a>
+      <a href="booking.html" style="color:white;margin-left:20px;text-decoration:none;">Booking</a>
+      <a href="contact.html" style="color:white;margin-left:20px;text-decoration:none;">Contact</a>
+      <a href="healthtips.html" style="color:white;margin-left:20px;text-decoration:none;">Health Tips</a>
+    </nav>
+  </header>
+
+  <div class="profile-card">
+    <h2>Murari</h2>
+    <h4>Patient</h4>
+
+    <div class="info">
+      <p><b>Age:</b> 28</p>
+      <p><b>Gender:</b> Male</p>
+      <p><b>Blood Group:</b> O+</p>
+      <p><b>Phone:</b> +91 98765 12345</p>
+      <p><b>Email:</b> murari08@example.com</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn" onclick="openTab(this,'history')">Medical History</button>
+      <button class="tab-btn" onclick="openTab(this,'appointments')">Appointments</button>
+      <button class="tab-btn" onclick="openTab(this,'prescriptions')">Prescriptions</button>
+    </div>
+
+    <div id="history" class="tab-content active">
+      <p>Last Checkup: 10-Aug-2025<br>Allergies: None<br>Previous Conditions: Mild Fever, 2024</p>
+    </div>
+
+    <div id="appointments" class="tab-content">
+      <p>Upcoming: 15-Sep-2025 with Dr. Priya Sharma<br>Past: 01-Jul-2025 with Dr. Neha Kapoor</p>
+    </div>
+
+    <div id="prescriptions" class="tab-content">
+      <p>1. Paracetamol 500mg - 3 times daily<br>2. Vitamin D supplement - once daily</p>
+    </div>
+
+    <button class="btn" onclick="alert('Edit profile feature coming soon!')">Edit Profile</button>
+    <button class="btn" onclick="alert('Redirecting to appointment booking page...')">Book Appointment</button>
+  </div>
+
+<script>
+function openTab(button,tabId){
+  let card=button.closest('.profile-card');
+  let contents=card.querySelectorAll('.tab-content');
+  contents.forEach(content=>content.classList.remove('active'));
+  card.querySelector('#'+tabId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
