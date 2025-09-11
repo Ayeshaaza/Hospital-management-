@@ -1,38 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patient Profile - LifeLine Hospital</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-body{background:linear-gradient(120deg,#FFDAB9,#98FB98);min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:40px 20px;color:#333;}
-.profile-card{background:#fff;border-radius:20px;box-shadow:0 6px 15px rgba(0,0,0,0.2);width:400px;padding:25px;text-align:center;animation:fadeIn 1s ease-in;}
-.profile-card h2{color:#FF7F50;margin-bottom:10px;}
-.profile-card h4{color:#3CB371;margin-bottom:15px;}
-.info p{font-size:14px;margin-bottom:8px;}
-.tabs{display:flex;justify-content:space-around;margin:20px 0;}
-.tab-btn{border:none;background:#FF7F50;color:white;padding:8px 15px;border-radius:15px;cursor:pointer;font-size:14px;transition:0.3s;}
-.tab-btn:hover{background:#3CB371;}
-.tab-content{display:none;text-align:left;margin-top:10px;font-size:14px;}
-.tab-content.active{display:block;}
-.btn{margin-top:15px;background:#3CB371;color:white;padding:10px 18px;border:none;border-radius:20px;font-size:15px;cursor:pointer;transition:0.3s;margin-right:10px;}
-.btn:hover{background:#FF7F50;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Profile - LifeLine Hospital</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg,#FFDAB9,#98FB98);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;   /* ✅ centers vertically */
+      padding-top: 100px;    /* ✅ pushes card below navbar */
+      color: #333;
+    }
+
+    .profile-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      width: 400px;
+      padding: 25px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .profile-card h2 {
+      color: #FF7F50;
+      margin-bottom: 10px;
+    }
+
+    .profile-card h4 {
+      color: #3CB371;
+      margin-bottom: 15px;
+    }
+
+    .info p {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .tab-btn {
+      border: none;
+      background: #FF7F50;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .tab-btn:hover {
+      background: #3CB371;
+    }
+
+    .tab-content {
+      display: none;
+      text-align: left;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .btn {
+      margin-top: 15px;
+      background: #3CB371;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 20px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-right: 10px;
+    }
+
+    .btn:hover {
+      background: #FF7F50;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* ✅ Navigation stays fixed at the top */
+    header {
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-
   <!-- ✅ Navigation Bar -->
-  <header style="background:rgba(0,0,0,0.7);color:white;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;width:100%;">
+  <header>
     <h1>🏥 LifeLine Hospital</h1>
     <nav>
-      <a href="index.html" style="color:white;margin-left:20px;text-decoration:none;">Home</a>
-      <a href="doctors.html" style="color:white;margin-left:20px;text-decoration:none;">Doctors</a>
-      <a href="patients.html" style="color:white;margin-left:20px;text-decoration:none;">Patients</a>
-      <a href="booking.html" style="color:white;margin-left:20px;text-decoration:none;">Booking</a>
-      <a href="contact.html" style="color:white;margin-left:20px;text-decoration:none;">Contact</a>
-      <a href="healthtips.html" style="color:white;margin-left:20px;text-decoration:none;">Health Tips</a>
+      <a href="index.html">Home</a>
+      <a href="doctors.html">Doctors</a>
+      <a href="patients.html">Patients</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+      <a href="healthtips.html">Health Tips</a>
     </nav>
   </header>
 
@@ -70,14 +171,13 @@ body{background:linear-gradient(120deg,#FFDAB9,#98FB98);min-height:100vh;display
     <button class="btn" onclick="alert('Redirecting to appointment booking page...')">Book Appointment</button>
   </div>
 
-<script>
-function openTab(button,tabId){
-  let card=button.closest('.profile-card');
-  let contents=card.querySelectorAll('.tab-content');
-  contents.forEach(content=>content.classList.remove('active'));
-  card.querySelector('#'+tabId).classList.add('active');
-}
-</script>
-
+  <script>
+    function openTab(button, tabId) {
+      let card = button.closest('.profile-card');
+      let contents = card.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+      card.querySelector('#' + tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
